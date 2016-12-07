@@ -11,8 +11,8 @@ library(tibble)
 paradox_degree <- seq(0,1,by=0.1)
 
 rate <- aaply(paradox_degree, 1, function(paradoxality) {
-  aucs <- raply(200, function() {
-    dat <- paradox_generator(88)
+  aucs <- raply(350, function() {
+    dat <- paradox_generator(88, paradoxality=paradoxality)
     res <- raply(500, fivefold(dat))
 
     median(na.omit(res[, 1]))
