@@ -11,7 +11,7 @@ library(tibble)
 paradox_degree <- seq(0,1,by=0.1)
 
 rate <- aaply(paradox_degree, 1, function(paradoxality) {
-  aucs <- raply(1000, function() {
+  aucs <- raply(200, function() {
     dat <- paradox_generator(88)
     res <- raply(500, fivefold(dat))
 
