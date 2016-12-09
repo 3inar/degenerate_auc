@@ -30,7 +30,8 @@ Below is a simulation study where I've explored this a bit. Paradox degree, d, i
 something I've added to the model to Prove That I'm Right. Basically push 
 E(X | y=1) in the positive direction by x_i <- x_i + (1-d)sigma. At d=1, the paradox
 above is in full effect; at d=0 the effects in both strata point in the same direction by
-a comfortable margin. The y-axis is simply the fraction of simulations where AUC < .5.
+a comfortable margin. The y-axis is simply the fraction of simulations where AUC < .5. 
+The experiment behind this figure is in `src/paradox_simulation.R`.
 ![if you're having stratum problems I feel bad for you son](figures/paradoxality.png)
 
 
