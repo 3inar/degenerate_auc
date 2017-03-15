@@ -1,15 +1,15 @@
 # fivefold cv
-fivefold <- function(data) {
+fivefold <- function(data, strata=1:nrow(data)) {
   nsamples <- nrow(data)
   nfolds <- 5
 
-  folds <- cut(sample(1:nsamples), breaks=nfolds, labels=F)
+  folds <- caret::createFolds(strata, k=nfolds)
 
   estimates <- NULL
   for(i in 1:nfolds)
   {
-    testindex <- which(folds == i)
-    trainindex <- which(folds != i)
+    testindex <- folds[[i]]
+    trainindex <- which(!1:nsamples %in% testindex)
 
     if (any(data[testindex, "response"] =="1")) {
       model <- glm(response~x, data=data, family = binomial, subset=trainindex)
