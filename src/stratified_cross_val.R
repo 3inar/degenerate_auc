@@ -31,5 +31,3 @@ full_strat <- raply(350, function() {
 
   median(na.omit(res[, 1]))
 }, .progress = "text")
-# paradox_results <- tibble(paradox_degree, rate)
-# save(paradox_results, file="data/stratified_xval.rda")
